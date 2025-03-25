@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Color</title>
+</head>
+<body>
+  <h1 style="font-family: 'Comic Sans MS', sans-serif;">Click the button below to change the background color!</h1>
+  <button id="changecolor">Change Color</button>
+  <script>
+    function changeBackgroundColor() {
+      var colors = ['tomato','orange','gold','limegreen','steelblue','mediumpurple','hotpink','darkturquoise','blueviolet', 'darkorange','red', 'purple',
+              'blue','green'];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+    document.getElementById('changecolor').addEventListener('click', changeBackgroundColor);
+  </script>
+</body>
+</html>

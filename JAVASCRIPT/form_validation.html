@@ -1,0 +1,84 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<link rel="stylesheet" href="formstyles.css">
+   <script>
+        function validateForm() {
+            var name = document.forms["regform"]["name"].value;
+            var phone = document.forms["regform"]["phno"].value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var email = document.forms["regform"]["email"].value;
+            var password = document.forms["regform"]["pass"].value;
+            var address = document.forms["regform"]["address"].value;
+            var qual = document.querySelectorAll('input[name="qual"]:checked').length;
+
+            if (name.trim() == "") {
+                alert("Name cannot be blank");
+                return false;
+            }
+            if (phone.trim() == "") {
+                alert("Phone number cannot be blank");
+                return false;
+            }
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Phone number must contain exactly 10 digits");
+                return false;
+            }
+            if (!gender) {
+                alert("Gender must be selected");
+                return false;
+            }
+            if (qual === 0) {
+                alert("Qualification must be selected");
+                return false;
+            }
+            if (email === "") {
+                alert("Email Id should be filled");
+                return false;
+            }
+            if (!email.includes("@")) {
+                alert("Invalid email address");
+                return false;
+            }
+            if (password === "") {
+                alert("Password cannot be blank");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Password length should be at least 8");
+                return false;
+            }
+            if (address === "") {
+                alert("Address must be filled");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>  
+<body>  
+    <h2><center><u>REGISTRATION FORM</u></center></h2>  
+    <form name="regform" action="#" method="post" onsubmit="return validateForm();">  
+            <label>Name</label><br>  
+            <input type="text" name="name"><br>  
+            <label>Gender</label><br>  
+            <input type="radio" id="male" name="gender" value="male"/>Male 
+            <input type="radio" id="female" name="gender" value="female"/>Female  
+            <input type="radio" id="others" name="gender" value="others"/>Others <br><br>
+            <label for="qual">Qualification:</label>
+            <input type="checkbox" name="qual" id="c1" value="bsc">B.Sc
+            <input type="checkbox" name="qual" id="c2" value="bca">BCA
+            <input type="checkbox" name="qual" id="c3" value="MCA">MCA<br>
+            <br>Address<br>  
+            <textarea name="address"></textarea><br> 
+            <label>Phone number</label><br>  
+            <input type="text" name="phno"><br>
+            <label>Email-id</label><br>  
+            <input type="email" name="email"><br>  
+            <label>Enter your Password</label><br>  
+            <input type="password" name="pass"><br> 
+            <input type="submit" value="SUBMIT">    
+    </form>  
+</body>  
+</html>
+

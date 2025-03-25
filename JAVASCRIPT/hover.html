@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Event</title>
+<style>
+    .container {
+        width: 300px;
+        margin: 100px auto;
+        text-align: center;
+    }
+    #existingContent {
+        padding: 20px;
+        background-color: purple;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        color:white;
+    }
+    #newContent {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="existingContent">
+        <h2>Hover over me to see an image!</h2>
+    </div>
+    <div id="newContent">
+        <img src="image.jpg" alt="New Image">
+        <p>This is a picture of nature</p>
+    </div>
+</div>
+<script>
+    const existingContent = document.getElementById('existingContent');
+    const newContent = document.getElementById('newContent');
+    function handleMouseEnter() {
+        newContent.style.display = 'block';
+    }
+
+    function handleMouseLeave() {
+        newContent.style.display = 'none';
+    }
+    existingContent.addEventListener('mouseenter', handleMouseEnter);
+    existingContent.addEventListener('mouseleave', handleMouseLeave);
+</script>
+
+</body>
+</html>
