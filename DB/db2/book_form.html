@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Entry and Search</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f7;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+        }
+        input[type="submit"] {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Add a Book</h2>
+    <form action="insert_book.php" method="POST">
+        <input type="number" name="accession_number" placeholder="Accession Number" required><br>
+        <input type="text" name="title" placeholder="Title" required><br>
+        <input type="text" name="authors" placeholder="Authors" required><br>
+        <input type="text" name="edition" placeholder="Edition" required><br>
+        <input type="text" name="publisher" placeholder="Publisher" required><br>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <h2>Search Book</h2>
+    <form action="search_book.php" method="GET">
+        <input type="text" name="search_title" placeholder="Enter Title to Search" required><br>
+        <input type="submit" value="Search">
+    </form>
+</div>
+</body>
+</html>
